@@ -20,6 +20,12 @@ public class ValueExpression<T> implements Expression<T>
 		return getValue();
 	}
 
+	@Override
+	public String toString()
+	{
+		return value + "";
+	}
+
 	public T getValue()
 	{
 		return value;

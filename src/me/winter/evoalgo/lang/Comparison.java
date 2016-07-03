@@ -24,6 +24,12 @@ public abstract class Comparison extends CompoundExpression<Boolean, Double, Dou
 		{
 			return getSubExpression1().run().doubleValue() == getSubExpression2().run().doubleValue();
 		}
+
+		@Override
+		public String toString()
+		{
+			return getSubExpression1().toString() + " == " + getSubExpression2().toString();
+		}
 	}
 
 	public static class GreaterThan extends Comparison
@@ -38,6 +44,12 @@ public abstract class Comparison extends CompoundExpression<Boolean, Double, Dou
 		{
 			return getSubExpression1().run() > getSubExpression2().run();
 		}
+
+		@Override
+		public String toString()
+		{
+			return getSubExpression1().toString() + " > " + getSubExpression2().toString();
+		}
 	}
 
 	public static class LowerThan extends Comparison
@@ -51,6 +63,12 @@ public abstract class Comparison extends CompoundExpression<Boolean, Double, Dou
 		public Boolean run()
 		{
 			return getSubExpression1().run() < getSubExpression2().run();
+		}
+
+		@Override
+		public String toString()
+		{
+			return getSubExpression1().toString() + " < " + getSubExpression2().toString();
 		}
 	}
 }

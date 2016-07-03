@@ -24,6 +24,12 @@ public abstract class ArithmeticOperation extends CompoundExpression<Double, Dou
 		{
 			return getSubExpression1().run() + getSubExpression2().run();
 		}
+
+		@Override
+		public String toString()
+		{
+			return getSubExpression1().toString() + " + " + getSubExpression2().toString();
+		}
 	}
 
 	public static class Subtraction extends ArithmeticOperation
@@ -37,6 +43,12 @@ public abstract class ArithmeticOperation extends CompoundExpression<Double, Dou
 		public Double run()
 		{
 			return getSubExpression1().run() - getSubExpression2().run();
+		}
+
+		@Override
+		public String toString()
+		{
+			return getSubExpression1().toString() + " - " + getSubExpression2().toString();
 		}
 	}
 
@@ -52,6 +64,12 @@ public abstract class ArithmeticOperation extends CompoundExpression<Double, Dou
 		{
 			return getSubExpression1().run() / getSubExpression2().run();
 		}
+
+		@Override
+		public String toString()
+		{
+			return getSubExpression1().toString() + " / " + getSubExpression2().toString();
+		}
 	}
 
 	public static class Multiplication extends ArithmeticOperation
@@ -65,6 +83,12 @@ public abstract class ArithmeticOperation extends CompoundExpression<Double, Dou
 		public Double run()
 		{
 			return getSubExpression1().run() * getSubExpression2().run();
+		}
+
+		@Override
+		public String toString()
+		{
+			return getSubExpression1().toString() + " * " + getSubExpression2().toString();
 		}
 	}
 }

@@ -7,7 +7,7 @@ import java.util.Map;
  *
  * <p>Created by Alexander Winter on 2016-06-25.</p>
  */
-public class Assignment<T> implements Expression<T>
+public class Assignment<T> implements StatementExpression<T>
 {
 	private Map<String, Object> variables;
 	private String variableName;
@@ -26,6 +26,12 @@ public class Assignment<T> implements Expression<T>
 		T result = value.run();
 		variables.put(variableName, result);
 		return result;
+	}
+
+	@Override
+	public String toString()
+	{
+		return variableName + " = " + value;
 	}
 
 	public String getVariableName()

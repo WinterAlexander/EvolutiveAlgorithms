@@ -24,6 +24,12 @@ public class VariableExpression<T> implements Expression<T>
 		return (T)variables.get(variableName);
 	}
 
+	@Override
+	public String toString()
+	{
+		return variableName;
+	}
+
 	public String getVariableName()
 	{
 		return variableName;

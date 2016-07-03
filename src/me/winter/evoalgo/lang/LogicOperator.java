@@ -19,6 +19,12 @@ public interface LogicOperator extends Expression<Boolean>
 		{
 			return getSubExpression1().run() || getSubExpression2().run();
 		}
+
+		@Override
+		public String toString()
+		{
+			return getSubExpression1().toString() + " || " + getSubExpression2().toString();
+		}
 	}
 
 	class Conjunction extends BinaryLogicOperation
@@ -32,6 +38,12 @@ public interface LogicOperator extends Expression<Boolean>
 		public Boolean run()
 		{
 			return getSubExpression1().run() && getSubExpression2().run();
+		}
+
+		@Override
+		public String toString()
+		{
+			return getSubExpression1().toString() + " && " + getSubExpression2().toString();
 		}
 	}
 
@@ -48,6 +60,12 @@ public interface LogicOperator extends Expression<Boolean>
 		public Boolean run()
 		{
 			return !getExpression().run();
+		}
+
+		@Override
+		public String toString()
+		{
+			return "!" + expression.toString();
 		}
 
 		public Expression<Boolean> getExpression()
